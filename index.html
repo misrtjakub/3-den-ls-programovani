@@ -1,40 +1,535 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>DEN 3</h1>
+			</section>
+			<section>
+				<section>
+					<h1>Opakování</h1>
+				</section>
+
+				<section>
+					<p>Co je to <strong>podmínka</strong> a k čemu slouží?</p>
+				</section>
+
+				<section>
+					<p>Jak se používá <code>if / else if / else</code>?</p>
+				</section>
+
+				<section>
+					<p>Jaký je rozdíl mezi <code>Parse()</code> a <code>TryParse()</code>?</p>
+				</section>
+
+				<section>
+					<p>Jak převedeme <code>string</code> na <code>int</code> bez pádu programu?</p>
+				</section>
+
+				<section>
+					<p>Co je to <code>pole</code>?</p>
+				</section>
+
+				<section>
+					<p>Jaký je rozdíl mezi <code>pole</code> a <code>List</code>?</p>
+				</section>
+
+				<section>
+					<p>Jaký je rozdíl mezi <code>for</code> a <code>foreach</code> cyklem?</p>
+				</section>
+
+				<section>
+					<p>Co znamená výraz <code>numbers[0]</code>?</p>
+				</section>
+
+				<section>
+					<p>Jaký je rozdíl mezi <code>==</code> a <code>=</code>?</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Řízení toku programu</h1>
+					<p class="fragment">Pokročilejší příkazy: <code>switch</code>, <code>continue</code>,
+						<code>break</code>, <code>return</code>, <code>do...while</code>
+					</p>
+				</section>
+
+				<section>
+					<h2><code>switch</code></h2>
+					<ul>
+						<li class="fragment">Náhrada za <code>if/else</code></li>
+						<li class="fragment">Přehlednější větvení</li>
+						<li class="fragment">Každý případ končí <code>break</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka <code>switch</code></h2>
+				</section>
+
+				<section>
+					<h2><code>break</code></h2>
+					<ul>
+						<li class="fragment">Ukončí cyklus nebo <code>switch</code></li>
+						<li class="fragment">Hodí se při splnění určité podmínky</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka <code>break</code></h2>
+				</section>
+
+				<section>
+					<h2><code>continue</code></h2>
+					<ul>
+						<li class="fragment">Přeskočí zbytek aktuální iterace</li>
+						<li class="fragment">Cyklus pokračuje další iterací</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka <code>continue</code></h2>
+				</section>
+
+				<section>
+					<h2><code>return</code></h2>
+					<ul>
+						<li class="fragment">Okamžité ukončení metody</li>
+						<li class="fragment">Může vrátit hodnotu</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka <code>return</code></h2>
+				</section>
+
+				<section>
+					<h2><code>do...while</code></h2>
+					<ul>
+						<li class="fragment">Nejprve provede tělo cyklu</li>
+						<li class="fragment">Podmínku kontroluje až potom</li>
+						<li class="fragment">Provede se minimálně jednou</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka <code>do...while</code></h2>
+				</section>
+
+				<section>
+					<h2>Cvičení 1</h2>
+					<p class="fragment">Zeptej se na číslo 1-5, použij <code>switch</code> a vypiš číslo slovem.</p>
+				</section>
+
+				<section>
+					<h2>Cvičení 2</h2>
+					<ul>
+						<li class="fragment">Vypiš čísla 1-10</li>
+						<li class="fragment">Sudá čísla přeskoč (<code>continue</code>)</li>
+						<li class="fragment">Při čísle 7 ukonči cyklus (<code>break</code>)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Cvičení 3</h2>
+					<p class="fragment">Použij <code>do...while</code> a ptej se na věk, dokud není větší než 0.</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Math knihovna</h1>
+				</section>
+
+				<section>
+					<h2>Co je Math?</h2>
+					<ul>
+						<li class="fragment">Vestavěná knihovna v C#</li>
+						<li class="fragment">Pracuje s čísly - např. odmocniny, zaokrouhlování</li>
+						<li class="fragment">Statická třída - volá se bez vytváření objektu</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Math.Abs()</h2>
+					<ul>
+						<li class="fragment">Vrací absolutní hodnotu (bez znaménka)</li>
+						<li class="fragment"><code>Math.Abs(-10)</code> → <code>10</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka</h2>
+				</section>
+
+				<section>
+					<h2>Math.Round()</h2>
+					<ul>
+						<li class="fragment">Zaokrouhluje číslo na celé číslo</li>
+						<li class="fragment"><code>Math.Round(3.6)</code> → <code>4</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka</h2>
+				</section>
+
+				<section>
+					<h2>Math.Sqrt()</h2>
+					<ul>
+						<li class="fragment">Vrací druhou odmocninu</li>
+						<li class="fragment"><code>Math.Sqrt(25)</code> → <code>5</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka</h2>
+				</section>
+
+				<section>
+					<h2>Math.Pow()</h2>
+					<ul>
+						<li class="fragment">Umocňuje číslo</li>
+						<li class="fragment"><code>Math.Pow(2, 3)</code> → <code>8</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka</h2>
+				</section>
+
+				<section>
+					<h2>Math.Min() a Math.Max()</h2>
+					<ul>
+						<li class="fragment"><code>Math.Min(5, 9)</code> → <code>5</code></li>
+						<li class="fragment"><code>Math.Max(5, 9)</code> → <code>9</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka</h2>
+				</section>
+
+				<section>
+					<h2>Úkoly</h2>
+					<ul>
+						<li class="fragment">1. Zeptej se uživatele na dvě čísla a vypiš jejich maximum</li>
+						<li class="fragment">2. Zeptej se na desetinné číslo a zaokrouhli ho</li>
+						<li class="fragment">3. Vypočítej 5 na druhou a druhou odmocninu z 81</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Metody</h1>
+				</section>
+				<section>
+					<h1>Metody</h1>
+					<ul>
+						<li class="fragment">Blok kódu, který můžeme opakovaně volat</li>
+						<li class="fragment">V C# jsou součástí tříd a struktur</li>
+						<li class="fragment">Zlepšují čitelnost a přehlednost kódu</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Anatomie metody</h2>
+					<ul>
+						<li class="fragment"><code>static</code> - metoda patří třídě, ne objektu</li>
+						<li class="fragment"><code>void</code> - návratový typ (žádná návratová hodnota)</li>
+						<li class="fragment">Název - např. <code>NapisNavod</code></li>
+						<li class="fragment">Závorky - seznam argumentů (může být prázdný)</li>
+						<pre><code class="language-csharp" data-line-numbers>static void NapisNavod() {
+  Console.WriteLine("Návod");
+}
+  </code></pre>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Volání metody</h2>
+					<pre><code class="language-csharp" data-line-numbers>NapisNavod();
+  </code></pre>
+				</section>
+
+				<section>
+					<h2>Argumenty</h2>
+					<pre><code class="language-csharp" data-line-numbers>static void NapisNavod(string s, string t) {
+  Console.WriteLine(s);
+  Console.WriteLine(t);
+}
+  </code></pre>
+				</section>
+
+				<section>
+					<h2>Návratová hodnota</h2>
+					<pre><code class="language-csharp" data-line-numbers>static bool JeDelitelem(int a, int b) {
+  return a % b == 0;
+}
+  </code></pre>
+				</section>
+
+				<section>
+					<h2>Předávání hodnotou</h2>
+					<pre><code class="language-csharp" data-line-numbers>static int Pridej1Val(int i) {
+  return ++i;
+}
+  </code></pre>
+				</section>
+
+				<section>
+					<h2>Předávání odkazem (ref)</h2>
+					<pre><code class="language-csharp" data-line-numbers>static int Pridej1Ref(ref int i) {
+  return ++i;
+}
+  </code></pre>
+				</section>
+
+				<section>
+					<h2>Předávání odkazem (out)</h2>
+					<pre><code class="language-csharp" data-line-numbers>static void Pridej1Out(out int i) {
+  i = 1;
+}
+  </code></pre>
+				</section>
+
+				<section>
+					<h2>Přetěžování metod</h2>
+					<ul>
+						<li class="fragment">Více metod se stejným názvem</li>
+						<li class="fragment">Liší se typem nebo způsobem předání parametrů</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Rozsah proměnných</h2>
+					<ul>
+						<li class="fragment">Proměnná platí jen v rámci svého bloku { }</li>
+						<li class="fragment">Nelze deklarovat 2 stejné proměnné ve stejném bloku</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Implicitní argumenty</h2>
+					<pre><code class="language-csharp" data-line-numbers="">static int PlusDva(int i = 0) {
+  return i + 2;
+}
+  </code></pre>
+				</section>
+
+				<section>
+					<h2>Úkoly</h2>
+					<ul>
+						<li class="fragment">1. Vytvoř metodu pro výpočet obvodu kruhu</li>
+						<li class="fragment">2. Metoda, která spočítá počet samohlásek ve stringu</li>
+						<li class="fragment">3. Metoda, která vrací největšího společného dělitele dvou čísel</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Třídy</h1>
+				</section>
+
+				<section>
+					<h2>Co je třída?</h2>
+					<ul>
+						<li class="fragment">Šablona pro vytvoření objektů</li>
+						<li class="fragment">Popisuje vlastnosti a chování (data a metody)</li>
+						<li class="fragment">Např. třída <code>Auto</code> může mít vlastnosti <code>barva</code>,
+							<code>rychlost</code> a metodu <code>Jezdi()</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Jak vypadá třída?</h2>
+					<pre><code class="language-csharp" data-line-numbers>class Auto {
+  public string Barva;
+  public int Rychlost;
+
+  public void Jed() {
+    Console.WriteLine("Auto jede!");
+  }
+}
+    </code></pre>
+				</section>
+
+				<section>
+					<h2>Vytvoření objektu</h2>
+					<pre><code class="language-csharp" data-line-numbers>Auto mojeAuto = new Auto();
+mojeAuto.Barva = "červená";
+mojeAuto.Jed();
+    </code></pre>
+				</section>
+
+				<section>
+					<h2>Vlastnosti a metody</h2>
+					<ul>
+						<li class="fragment"><strong>Vlastnosti</strong> - proměnné uvnitř třídy</li>
+						<li class="fragment"><strong>Metody</strong> - funkce, které může objekt provádět</li>
+						<li class="fragment">Každý objekt má vlastní hodnoty těchto vlastností</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Konstruktor</h2>
+					<pre><code class="language-csharp" data-line-numbers>class Auto {
+  public string Barva;
+
+  public Auto(string barva) {
+    Barva = barva;
+  }
+}
+    </code></pre>
+					<p class="fragment">Speciální metoda volaná při vytváření objektu</p>
+				</section>
+
+				<section>
+					<h2>Úkoly</h2>
+					<ul>
+						<li class="fragment">1. Vytvoř třídu <code>Osoba</code> se jménem a věkem</li>
+						<li class="fragment">2. Přidej metodu <code>Pozdrav()</code>, která vypíše „Ahoj, já jsem...“
+						</li>
+						<li class="fragment">3. Vytvoř 2 různé objekty typu <code>Osoba</code> a zavolej na nich
+							<code>Pozdrav()</code></li>
+					</ul>
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h1>OOP</h1>
+					<p class="fragment">Objektově orientované programování</p>
+				</section>
+
+				<section>
+					<h2>Co je OOP?</h2>
+					<ul>
+						<li class="fragment">Programovaní založené na objektech</li>
+						<li class="fragment">Zlepšuje organizaci a opakované použití kódu</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Základní pojmy</h2>
+					<ul>
+						<li class="fragment"><strong>Třída</strong> - šablona pro objekt</li>
+						<li class="fragment"><strong>Objekt</strong> - konkrétní instance třídy</li>
+						<li class="fragment"><strong>Vlastnosti</strong> - data objektu</li>
+						<li class="fragment"><strong>Metody</strong> - chování objektu</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Příklad třídy</h2>
+					<pre><code class="language-csharp" data-line-numbers>class Auto {
+  public string Znacka;
+  public int Rok;
+
+  public void Start() {
+    Console.WriteLine("Motor spuštěn.");
+  }
+}</code></pre>
+				</section>
+
+				<section>
+					<h2>Vytvoření objektu</h2>
+					<pre><code class="language-csharp" data-line-numbers>Auto mojeAuto = new Auto();
+mojeAuto.Znacka = "Škoda";
+mojeAuto.Rok = 2020;
+mojeAuto.Start();</code></pre>
+				</section>
+
+				<section>
+					<h2>Konstruktor</h2>
+					<pre><code class="language-csharp" data-line-numbers>class Auto {
+  public string Znacka;
+
+  public Auto(string znacka) {
+    Znacka = znacka;
+  }
+}</code></pre>
+				</section>
+
+				<section>
+					<h2>Zapouzdření (Encapsulation)</h2>
+					<ul>
+						<li class="fragment">Ukrytí vnitřního stavu objektu</li>
+						<li class="fragment">Používáme <code>private</code> + veřejné metody
+							(<code>get</code>/<code>set</code>)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Dědičnost (Inheritance)</h2>
+					<ul>
+						<li class="fragment">Třída může dědit od jiné třídy</li>
+						<li class="fragment">Dědí vlastnosti a metody</li>
+						<li class="fragment">Používá se <code>:</code> (např. <code>class SportovniAuto : Auto</code>)
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Polymorfismus</h2>
+					<ul>
+						<li class="fragment">Objekt se chová podle svého typu i typu předka</li>
+						<li class="fragment">Metody lze přepsat pomocí <code>override</code></li>
+						<li class="fragment">Podporuje rozšiřitelnost</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Úkoly</h2>
+					<ul>
+						<li class="fragment">1. Vytvoř třídu <code>Zvire</code> s vlastností <code>Jmeno</code> a
+							metodou <code>Zvuk()</code></li>
+						<li class="fragment">2. Vytvoř třídy <code>Kocka</code> a <code>Pes</code>, které dědí ze
+							<code>Zvire</code>
+						</li>
+						<li class="fragment">3. V každé třídě přepiš metodu <code>Zvuk()</code></li>
+					</ul>
+				</section>
+			</section>
+
+
+
+
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
