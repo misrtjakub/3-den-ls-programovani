@@ -254,10 +254,32 @@
 						<li class="fragment"><code>void</code> - návratový typ (žádná návratová hodnota)</li>
 						<li class="fragment">Název - např. <code>NapisNavod</code></li>
 						<li class="fragment">Závorky - seznam argumentů (může být prázdný)</li>
-						<pre><code class="language-csharp" data-line-numbers>static void NapisNavod() {
-  Console.WriteLine("Návod");
+						<pre><code class="language-csharp" data-line-numbers>static void NapisNavod(string nadpis, string popis)
+{
+    Console.WriteLine(nadpis);
+    Console.WriteLine(popis);
 }
   </code></pre>
+					</ul>
+				</section>
+				<section>
+					<h2>Modifikátory metod</h2>
+					<ul>
+						<li class="fragment"><code>static</code> - metoda patří třídě, ne objektu</li>
+						<li class="fragment"><code>public</code> - přístupná odkudkoliv</li>
+						<li class="fragment"><code>private</code> - přístupná pouze ve stejné třídě</li>
+						<li class="fragment"><code>protected</code> - přístupná v rámci třídy a dědičnosti</li>
+						<li class="fragment"><code>internal</code> - přístupná ve stejném projektu</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Návratové typy metod</h2>
+					<ul>
+						<li class="fragment"><code>void</code> - nevrací nic</li>
+						<li class="fragment"><code>int</code> - vrací celé číslo</li>
+						<li class="fragment"><code>string</code> - vrací text</li>
+						<li class="fragment"><code>bool</code> - vrací pravda/nepravda</li>
+						<li class="fragment"><code>double</code>, <code>decimal</code> - desetinná čísla</li>
 					</ul>
 				</section>
 
@@ -353,7 +375,8 @@
 						<li class="fragment">Šablona pro vytvoření objektů</li>
 						<li class="fragment">Popisuje vlastnosti a chování (data a metody)</li>
 						<li class="fragment">Např. třída <code>Auto</code> může mít vlastnosti <code>barva</code>,
-							<code>rychlost</code> a metodu <code>Jezdi()</code></li>
+							<code>rychlost</code> a metodu <code>Jezdi()</code>
+						</li>
 					</ul>
 				</section>
 
@@ -407,7 +430,8 @@ mojeAuto.Jed();
 						<li class="fragment">2. Přidej metodu <code>Pozdrav()</code>, která vypíše „Ahoj, já jsem...“
 						</li>
 						<li class="fragment">3. Vytvoř 2 různé objekty typu <code>Osoba</code> a zavolej na nich
-							<code>Pozdrav()</code></li>
+							<code>Pozdrav()</code>
+						</li>
 					</ul>
 				</section>
 			</section>
@@ -416,24 +440,27 @@ mojeAuto.Jed();
 			<section>
 				<section>
 					<h1>OOP</h1>
-					<p class="fragment">Objektově orientované programování</p>
+					<p class="fragment">Programování pomocí objektů</p>
 				</section>
 
 				<section>
 					<h2>Co je OOP?</h2>
 					<ul>
-						<li class="fragment">Programovaní založené na objektech</li>
-						<li class="fragment">Zlepšuje organizaci a opakované použití kódu</li>
+						<li class="fragment">Programování, kde si věci představujeme jako "objekty"</li>
+						<li class="fragment">Pomáhá nám psát přehlednější a znovu použitelný kód</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Základní pojmy</h2>
+					<h2>Hlavní pojmy</h2>
 					<ul>
-						<li class="fragment"><strong>Třída</strong> - šablona pro objekt</li>
-						<li class="fragment"><strong>Objekt</strong> - konkrétní instance třídy</li>
-						<li class="fragment"><strong>Vlastnosti</strong> - data objektu</li>
-						<li class="fragment"><strong>Metody</strong> - chování objektu</li>
+						<li class="fragment"><strong>Třída</strong> - plán, podle kterého se vyrábí objekt (např.
+							recept)</li>
+						<li class="fragment"><strong>Objekt</strong> - věc vytvořená podle třídy (např. dort podle
+							receptu)</li>
+						<li class="fragment"><strong>Vlastnosti</strong> - co objekt má (např. jméno, barvu, věk)</li>
+						<li class="fragment"><strong>Metody</strong> - co objekt umí dělat (např. mňoukat, jet, skákat)
+						</li>
 					</ul>
 				</section>
 
@@ -459,6 +486,7 @@ mojeAuto.Start();</code></pre>
 
 				<section>
 					<h2>Konstruktor</h2>
+					<p class="fragment">Speciální metoda, která se spustí, když se objekt vytvoří</p>
 					<pre><code class="language-csharp" data-line-numbers>class Auto {
   public string Znacka;
 
@@ -469,31 +497,44 @@ mojeAuto.Start();</code></pre>
 				</section>
 
 				<section>
-					<h2>Zapouzdření (Encapsulation)</h2>
+					<h2>Zapouzdření</h2>
+					<p class="fragment">Když si objekt chrání svá data</p>
 					<ul>
-						<li class="fragment">Ukrytí vnitřního stavu objektu</li>
-						<li class="fragment">Používáme <code>private</code> + veřejné metody
-							(<code>get</code>/<code>set</code>)</li>
+						<li class="fragment">Používáme <code>private</code> - skryjeme data</li>
+						<li class="fragment">A použijeme metody <code>get</code> a <code>set</code>, když je chceme
+							změnit</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Dědičnost (Inheritance)</h2>
+					<h2>Ukázka zapouzdření</h2>
+				</section>
+
+				<section>
+					<h2>Dědičnost</h2>
 					<ul>
-						<li class="fragment">Třída může dědit od jiné třídy</li>
-						<li class="fragment">Dědí vlastnosti a metody</li>
-						<li class="fragment">Používá se <code>:</code> (např. <code>class SportovniAuto : Auto</code>)
-						</li>
+						<li class="fragment">Jedna třída může vycházet z jiné</li>
+						<li class="fragment">Získá všechny její vlastnosti a metody</li>
+						<li class="fragment">Např. <code>class SportovniAuto : Auto</code></li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka dědičnosti</h2>
 				</section>
 
 				<section>
 					<h2>Polymorfismus</h2>
 					<ul>
-						<li class="fragment">Objekt se chová podle svého typu i typu předka</li>
-						<li class="fragment">Metody lze přepsat pomocí <code>override</code></li>
-						<li class="fragment">Podporuje rozšiřitelnost</li>
+						<li class="fragment">Objekty se umí chovat různě podle toho, jakou mají třídu</li>
+						<li class="fragment">Např. <code>Zvire</code> má metodu <code>Zvuk()</code>, ale každé zvíře
+							vydá jiný zvuk</li>
+						<li class="fragment">Používáme <code>override</code>, když chceme přepsat metodu</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Ukázka polymorfismu</h2>
 				</section>
 
 				<section>
@@ -502,8 +543,7 @@ mojeAuto.Start();</code></pre>
 						<li class="fragment">1. Vytvoř třídu <code>Zvire</code> s vlastností <code>Jmeno</code> a
 							metodou <code>Zvuk()</code></li>
 						<li class="fragment">2. Vytvoř třídy <code>Kocka</code> a <code>Pes</code>, které dědí ze
-							<code>Zvire</code>
-						</li>
+							<code>Zvire</code></li>
 						<li class="fragment">3. V každé třídě přepiš metodu <code>Zvuk()</code></li>
 					</ul>
 				</section>
