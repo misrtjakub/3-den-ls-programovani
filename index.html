@@ -538,12 +538,49 @@ mojeAuto.Start();</code></pre>
 				</section>
 
 				<section>
+					<h2>Rozhraní (interface)</h2>
+					<ul>
+						<li class="fragment">Popisuje, co musí třída umět</li>
+						<li class="fragment">Neobsahuje konkrétní kód - jen názvy metod</li>
+						<li class="fragment">Třída pak musí metody <code>implementovat</code></li>
+						<li class="fragment">Pomáhá sjednotit chování různých tříd</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Příklad rozhraní</h2>
+					<pre><code class="language-csharp" data-line-numbers>interface IZvire {
+  void Zvuk();
+}
+  </code></pre>
+					<p class="fragment">Každé zvíře, které implementuje <code>IZvire</code>, musí mít metodu
+						<code>Zvuk()</code>
+					</p>
+				</section>
+
+				<section>
+					<h2>Implementace rozhraní</h2>
+					<pre><code class="language-csharp" data-line-numbers>class Kocka : IZvire {
+  public void Zvuk() {
+    Console.WriteLine("Mňau!");
+  }
+}
+
+class Pes : IZvire {
+  public void Zvuk() {
+    Console.WriteLine("Haf!");
+  }
+}
+  </code></pre>
+				</section>
+				<section>
 					<h2>Úkoly</h2>
 					<ul>
 						<li class="fragment">1. Vytvoř třídu <code>Zvire</code> s vlastností <code>Jmeno</code> a
 							metodou <code>Zvuk()</code></li>
 						<li class="fragment">2. Vytvoř třídy <code>Kocka</code> a <code>Pes</code>, které dědí ze
-							<code>Zvire</code></li>
+							<code>Zvire</code>
+						</li>
 						<li class="fragment">3. V každé třídě přepiš metodu <code>Zvuk()</code></li>
 					</ul>
 				</section>
